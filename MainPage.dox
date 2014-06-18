@@ -1,0 +1,75 @@
+/**
+@mainpage notitle
+  
+@tableofcontents
+  
+@section usage1 Usage of individual program
+
+  Compile this source code with main.cpp, you will get a executable binary. It can be used to control camera and take photos through console.The details please refer @ref binary_usage.
+  
+@section usage2 Usage of module
+
+  If you want to use as a module compile without main.cpp. Details please refer it.
+
+@section Install Install details
+ 
+  @subsection deb_install Deb_install
+    Install produsure, please refer @ref install_1.
+	
+  @subsection bin_install Bin_install
+    If you compile this program with source code, it will occurs in the build directory.
+
+@section dependencies Dependencies
+
+  Opencv(highgui)
+  
+  V4L2
+  
+@section makedeb MakeDeb
+  
+    @ref howtomakedeb
+*/
+
+/**
+@page binary_usage Binary_usage
+
+  At the availabe directory,type "./camera" into console.The program will starts.
+  
+  It will check config file wether exists.If it doesn't exists,create it. After that load parameter from it.
+  
+  Program will generae photo name use the elements from config file.
+  
+  Open camera with index.
+  
+  Get control list of current camera.
+  
+  Check camera config file wether exists.If it doesn't exists,create it. Otherwise load data from "camera_name.cfg" and make them effective.
+  
+  When it go to main loop,you can control it dependency help_menu.Press a key in the list,you will get next prompt.
+  
+  The setting details please refer config files.
+*/
+
+/**
+@page install_1 INSTALL_1
+
+  dpkg -i packagename.deb
+
+*/
+
+/**
+@page howtomakedeb HowToMakeDeb
+
+@section deb_requirement Requirement
+  @subsection tools Tools
+    Autotools(autoscan,automake,autoreconf,autoheader,autoconf,autom4te)
+  @subsection prepair Prepair
+    Change your folder name to full lowercase,for exampe:packagename-packageversion. 
+  
+@section make_configure Make_configure
+  ./autoscan to generate config.scan
+  
+  Modify it as config.scan
+  
+  Rename config.scan -> config.ac
+*/
